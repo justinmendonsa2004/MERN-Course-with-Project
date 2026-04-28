@@ -1,5 +1,8 @@
 import { useState } from "react";
 import "./App.css";
+import AllProducts from "./AllProducts";
+import ItemInput from "./ItemInput";
+import GeneratedBills from "./GeneratedBills";
 function App() {
   const [customerName, setcustomerName] = useState("");
   const [customerPhone, setcustomerPhone] = useState("+91");
@@ -61,98 +64,27 @@ function App() {
           </div>
         </div>
         {productList.length > 0 && (
-          <div className="allProducts">
-            <table>
-              <tr>
-                <th>SL</th>
-                <th>Name</th>
-                <th>QTY</th>
-                <th>Total</th>
-              </tr>
-              {productList.map((element, index) => (
-                <tr>
-                  <td>{index + 1}</td>
-                  <td>{element.ProductName}</td>
-                  <td>{element.QTY}</td>
-                  <td>{element.Total}</td>
-                </tr>
-              ))}
-            </table>
-            <button id="Button" onClick={handleGeneretBills}>
-              Generate Bill
-            </button>
-          </div>
+          <AllProducts
+            productList={productList}
+            handleGeneretBills={handleGeneretBills}
+          />
         )}
-        <div className="itemInput">
-          <div className="productNamebox">
-            <label htmlFor="productname">Product Name:</label>
-            <input
-              type="text"
-              name="productname"
-              value={ProductName}
-              onChange={(e) => setProductName(e.target.value)}
-            />
-          </div>
-          <div className="productQtyBox">
-            <label htmlFor="productQTY">QTY:</label>
-            <input
-              type="number"
-              name="productQTY"
-              value={ProductQTY}
-              onChange={(e) => setProductQTY(e.target.value)}
-            />
-          </div>
-          <div className="productQtyBox">
-            <label htmlFor="productprice">Price:</label>
-            <input
-              type="number"
-              name="productprice"
-              value={ProductPrice}
-              onChange={(e) => setProductPrice(e.target.value)}
-            />
-          </div>
-          <div className="TotalAmount">
-            <p>
-              <b>Total:</b>
-              Rs.{ProductPrice * ProductQTY}
-            </p>
-          </div>
-          <div className="AddItemBox">
-            <button onClick={handleAddButton}>Add Item</button>
-          </div>
-        </div>
+        <ItemInput
+          ProductName={ProductName}
+          ProductQTY={ProductQTY}
+          ProductPrice={ProductPrice}
+          setProductName={setProductName}
+          setProductQTY={setProductQTY}
+          setProductPrice={setProductPrice}
+          handleAddButton={handleAddButton}
+        />
         {showGeneratedBill && (
-          <div className="generatedBillBox">
-            <h1>Generated Bills</h1>
-            <div className="customerBox">
-              <p>
-                <b>Customer Name:</b>
-                {customerName} <b>Contact:</b>
-                {customerPhone}
-              </p>
-            </div>
-            <div className="allProducts">
-              <table>
-                <tr>
-                  <th>SL</th>
-                  <th>Name</th>
-                  <th>QTY</th>
-                  <th>Total</th>
-                </tr>
-                {productList.map((element, index) => (
-                  <tr>
-                    <td>{index + 1}</td>
-                    <td>{element.ProductName}</td>
-                    <td>{element.QTY}</td>
-                    <td>{element.Total}</td>
-                  </tr>
-                ))}
-              </table>
-              <button id="Button" onClick={ResetBills}>
-                Reset
-              </button>
-            </div>
-          </div>
+          <GeneratedBills
+            productList={productList}
+            ResetBills={ResetBills}
+            customerName={customerName}
+            customerPhone={customerPhone}
+          />
         )}
       </div>
     </>
