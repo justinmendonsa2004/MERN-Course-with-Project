@@ -36,6 +36,7 @@ function App() {
 export default App;
 */
 
+import "./App.css";
 import { useState } from "react";
 import axios from "axios";
 
@@ -44,8 +45,8 @@ function App() {
 
   const handleLoadData = async () => {
     const response = await axios.get("https://dummyjson.com/products");
-    setData(response.data.products); // ✅ correct array
     console.log(data);
+    setData(response.data.products); // ✅ correct array
   };
 
   return (
