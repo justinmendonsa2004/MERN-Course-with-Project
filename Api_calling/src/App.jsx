@@ -37,21 +37,24 @@ export default App;
 */
 
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 function App() {
   const [data, setData] = useState([]);
+  const [status, setStatus] = useState(true);
 
-  const handleLoadData = async () => {
-    const response = await axios.get("https://dummyjson.com/products");
-    console.log(data);
-    setData(response.data.products); // ✅ correct array
-  };
-
+  useEffect(() => {
+    const handleLoadData = async () => {
+      const response = await axios.get("https://dummyjson.com/products");
+      console.log(response.data.products);
+      setData([...response.data.products]); // ✅ correct array
+    };
+    handleLoadData();
+  }, [status]);
   return (
     <>
-      <button onClick={handleLoadData}>Load</button>
+      <button onClick={() => setStatus(!status)}>Load</button>
 
       <div className="cardBox">
         {data.map((item) => (
