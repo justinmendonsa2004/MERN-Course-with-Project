@@ -10,13 +10,13 @@ btn.addEventListener("click", () => {
 div.addEventListener("mousedown", () => {
   div.innerHTML = "mouse cliked";
 });
-/*
+
 div.addEventListener("mouseover", () => {
   div.innerHTML = "mouse hover";
 });
 div.addEventListener("mouseout", () => {
   div.innerHTML = "mouse out";
-});*/
+});
 input.addEventListener("keypress", (key) => {
   div.innerHTML = `${key.key} is pressed`;
 });

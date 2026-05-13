@@ -25,11 +25,10 @@ console.log(vajeed);
 console.log(shashi);
 console.log(Rahul);
 */
-
 //recursive Function....
 
 //The function calls its self inside the function is called recursive function.
-
+/*
 function returnOne(one) {
   if (one == 1) {
     return 1;
@@ -40,7 +39,7 @@ function returnOne(one) {
 
 let a = returnOne(10);
 console.log(a);
-
+*/
 //problomes
 //factorial problems
 

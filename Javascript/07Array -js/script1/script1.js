@@ -8,7 +8,6 @@ let Arun = [80, 70, 87, 149];
 
 //constrocter way...
 let shashi = new Array(80, 70, 86, 149);
-
 let size = shashi.length;
 console.log(size);
 /*
@@ -21,6 +20,7 @@ for (let i = 0; i < size; i++) {
 }
 */
 //for each loop...
+
 vajaeed.forEach((item, index) => {
   console.log(subject[index], ":", item);
 });

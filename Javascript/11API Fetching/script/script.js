@@ -1,5 +1,5 @@
-/*console.log("share the video");
-//get method using async and wait....
+console.log("share the video");
+/*//get method using async and wait....
 let url = "https://jsonplaceholder.typicode.com/users";
 
 async function getData(url) {
@@ -8,6 +8,7 @@ async function getData(url) {
 }
 
 getData(url)
+  //promises
   .then((prom) => {
     return prom.json();
   })
@@ -32,7 +33,7 @@ let objAPI = {
     "Content-type": "application/json; charset=UTF-8",
   },
 };
-/*
+
 async function getData(url, obj) {
   let data = await fetch(url, obj);
   return data;
@@ -48,7 +49,6 @@ getData(url, objAPI)
   .catch((e) => {
     console.log("Smothing went wrong");
   });
-*/
 
 let a = fetch(url, objAPI);
 
