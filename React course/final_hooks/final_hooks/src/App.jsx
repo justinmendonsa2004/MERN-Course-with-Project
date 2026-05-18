@@ -16,9 +16,9 @@ function SqureofNum(num) {
 }
 
 function App() {
-  const [count, setcount] = useReducer(handleCount, 0); //this useReducer
+  const [count, setcount] = useReducer(handleCount, 0); //this useReducer....
 
-  const SquareofCount = useMemo(() => SqureofNum(count), [count]); //this is useMemo
+  const SquareofCount = useMemo(() => SqureofNum(count), [count]); //this is useMemo....
 
   // const handleAdd = () => {
   //   setcount(count + 1);
