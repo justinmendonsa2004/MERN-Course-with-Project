@@ -12,7 +12,7 @@ function Login() {
 
   useEffect(() => {
     if (isLogged) {
-      navigation("/home"); //conditional routing
+      navigation("/home"); //conditional routing....
     }
   }, []);
 
